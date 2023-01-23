@@ -1,13 +1,16 @@
-import Fastify from 'fastify'
-import cors from '@fastify/cors'
-import { appRoutes } from './routes'
-const app = Fastify()
+import Fastify from "fastify";
+import cors from "@fastify/cors";
+import { appRoutes } from "./routes";
+const app = Fastify();
 
-app.register(cors)
-app.register(appRoutes)
+app.register(cors);
+app.register(appRoutes);
 
-app.listen({
+app
+  .listen({
     port: 3000,
-}).then(() => {
-    console.log('🚀 Server Running...')
-})
+    host: "192.168.200.12",
+  })
+  .then(() => {
+    console.log("🚀 Server Running...");
+  });
